@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <MenuBar layoutY="3.0" prefHeight="22.0" prefWidth="600.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Student list" />
+                <Menu mnemonicParsing="false" text="Add a student" />
+            </menus>
+        </MenuBar>
+      <TableView layoutY="76.0" prefHeight="287.0" prefWidth="600.0">
+        <columns>
+          <TableColumn prefWidth="100.0" text="First Name" />
+          <TableColumn prefWidth="100.0" text="Last Name" />
+            <TableColumn prefWidth="100.0" text="Birth Year" />
+            <TableColumn prefWidth="100.0" text="Promotion" />
+            <TableColumn prefWidth="100.0" text="Specialisation" />
+            <TableColumn prefWidth="100.0" />
+        </columns>
+      </TableView>
+      <Button layoutX="521.0" layoutY="39.0" mnemonicParsing="false" text="Modify" />
+      <Text fill="#34479e" layoutX="220.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student list" textAlignment="CENTER" wrappingWidth="159.0227508544922">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+    </children>
+</Pane>
