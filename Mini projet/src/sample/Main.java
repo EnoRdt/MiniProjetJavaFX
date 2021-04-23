@@ -1,12 +1,15 @@
 package sample;
 
-import javafx.collections.*;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 
 
 public class Main extends Application {
@@ -34,4 +37,24 @@ public class Main extends Application {
     public ObservableList<Student> getStudentData() {
         return StudentData;
     }
+
+    public void showPersonOverview() {
+        try {
+            // Load person overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("HomePage.fxml"));
+            AnchorPane personOverview = (AnchorPane) loader.load();
+
+            // Set person overview into the center of root layout.
+            //rootLayout.setCenter(personOverview);
+
+            // Give the controller access to the main app.
+            StudentOverviewController controller = loader.getController();
+            controller.setMainApp(this);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
+
