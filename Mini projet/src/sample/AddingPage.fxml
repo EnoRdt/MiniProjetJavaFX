@@ -16,7 +16,7 @@
       <MenuBar prefHeight="25.0" prefWidth="600.0">
         <menus>
           <Menu mnemonicParsing="false" text="Student list" />
-          <Menu mnemonicParsing="false" text="Add a Student" />
+          <Menu styleClass="AddingPage_AddAStudent" mnemonicParsing="false" text="Add a Student" />
         </menus>
       </MenuBar>
       <Text layoutX="121.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Firstname * :" textAlignment="CENTER" wrappingWidth="105.0" />

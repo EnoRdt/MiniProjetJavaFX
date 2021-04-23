@@ -13,7 +13,7 @@
     <children>
         <MenuBar layoutY="3.0" prefHeight="22.0" prefWidth="600.0">
             <menus>
-                <Menu mnemonicParsing="false" text="Student list" />
+                <Menu styleClass="Homepage_StudentList" mnemonicParsing="false" text="Student list" />
                 <Menu mnemonicParsing="false" text="Add a student" />
             </menus>
         </MenuBar>
