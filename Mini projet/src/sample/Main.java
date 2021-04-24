@@ -20,7 +20,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Mini projet JavaFX");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
         StudentData.add(new Student("Edouard", "Cullen", 1888, "L3", null));

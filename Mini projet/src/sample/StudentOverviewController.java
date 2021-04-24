@@ -2,30 +2,22 @@ package sample;
 
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 public class StudentOverviewController {
     @FXML
-    private TableView<Student> personTable;
+    private TableView<Student> studentTable;
     @FXML
     private TableColumn<Student, String> firstNameColumn;
     @FXML
     private TableColumn<Student, String> lastNameColumn;
-
     @FXML
-    private Label firstNameLabel;
+    private TableColumn<Student, String> BirthNameColumn;
     @FXML
-    private Label lastNameLabel;
+    private TableColumn<Student, String> PromotionColumn;
     @FXML
-    private Label streetLabel;
-    @FXML
-    private Label postalCodeLabel;
-    @FXML
-    private Label cityLabel;
-    @FXML
-    private Label birthdayLabel;
+    private TableColumn<Student, String> SpeColumn;
 
     // Reference to the main application.
     private Main mainApp;
@@ -46,6 +38,9 @@ public class StudentOverviewController {
         // Initialize the person table with the two columns.
         firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
         lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
+        //BirthNameColumn.setCellValueFactory(cellData -> cellData.getValue().yearOfBirthProperty());
+        PromotionColumn.setCellValueFactory(cellData -> cellData.getValue().promotionProperty());
+        SpeColumn.setCellValueFactory(cellData -> cellData.getValue().specialisationProperty());
     }
 
     /**
@@ -57,7 +52,7 @@ public class StudentOverviewController {
         this.mainApp = mainApp;
 
         // Add observable list data to the table
-        personTable.setItems(mainApp.getStudentData());
+        studentTable.setItems(mainApp.getStudentData());
     }
 }
 
