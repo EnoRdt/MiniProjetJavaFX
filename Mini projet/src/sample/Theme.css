@@ -1,3 +1,34 @@
-.Homepage_StudentList {
-    -fx-background-color: blue;
+/* Global style */
+.background {
+    -fx-background-color: #E7F2FF;
+}
+
+/* Green buttons */
+.button_pos {
+    -fx-text-alignment: center;
+    -fx-background-color: linear-gradient(#DCFAC5,#B2CB9E);
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: grey;
+}
+.button_pos:hover {
+    -fx-background-color: linear-gradient(#BEFF8B,#9BD071);
+}
+.button_pos:pressed {
+    -fx-background-color: #91CC63;
+}
+
+/* Red buttons */
+.button_neg {
+    -fx-text-alignment: center;
+    -fx-background-color: linear-gradient(#FAC5C5,#CB9E9E);
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: grey;
+}
+.button_neg:hover {
+    -fx-background-color: linear-gradient(#FF8B8B,#D07171);
+}
+.button_neg:pressed {
+    -fx-background-color: #CC6363;
 }
