@@ -17,13 +17,13 @@
                 <Menu mnemonicParsing="false" text="Add a student" />
             </menus>
         </MenuBar>
-      <TableView layoutY="76.0" prefHeight="287.0" prefWidth="600.0">
+      <TableView fx:id="studentTable" layoutY="76.0" prefHeight="287.0" prefWidth="600.0">
         <columns>
-          <TableColumn prefWidth="100.0" text="First Name" />
-          <TableColumn prefWidth="100.0" text="Last Name" />
-            <TableColumn prefWidth="100.0" text="Birth Year" />
-            <TableColumn prefWidth="100.0" text="Promotion" />
-            <TableColumn prefWidth="100.0" text="Specialisation" />
+          <TableColumn fx:id="firstNameColumn" prefWidth="100.0" text="First Name" />
+          <TableColumn fx:id="lastNameColumn" prefWidth="100.0" text="Last Name" />
+            <TableColumn fx:id="BirthNameColumn" prefWidth="100.0" text="Birth Year" />
+            <TableColumn fx:id="PromotionColumn" prefWidth="100.0" text="Promotion" />
+            <TableColumn fx:id="SpeColumn" prefWidth="100.0" text="Specialisation" />
             <TableColumn prefWidth="100.0" />
         </columns>
       </TableView>
