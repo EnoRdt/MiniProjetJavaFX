@@ -20,9 +20,9 @@
         </menus>
       </MenuBar>
       <Text layoutX="121.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Firstname * :" textAlignment="CENTER" wrappingWidth="105.0" />
-      <TextField fx:id="firstNameField" layoutX="226.0" layoutY="96.0" />
-      <TextField fx:id="lastNameField" layoutX="226.0" layoutY="144.0" />
-      <TextField fx:id="yearOfBirthField" layoutX="226.0" layoutY="188.0" prefHeight="25.0" prefWidth="77.0" />
+      <TextField id="firstNameField" layoutX="226.0" layoutY="96.0" />
+      <TextField id="lastNameField" layoutX="226.0" layoutY="144.0" />
+      <TextField id="yearOfBirthField" layoutX="226.0" layoutY="188.0" prefHeight="25.0" prefWidth="77.0" />
       <Text layoutX="121.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lastname * :" textAlignment="CENTER" wrappingWidth="105.0" />
       <Text layoutX="121.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birth Year * :" textAlignment="CENTER" wrappingWidth="105.0" />
       <Text fill="#34479e" layoutX="7.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add a new student :" textAlignment="CENTER" wrappingWidth="593.0">
@@ -30,12 +30,12 @@
             <Font name="System Italic" size="20.0" />
          </font>
       </Text>
-      <CheckBox fx:id="L3promotionField" layoutX="226.0" layoutY="252.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="41.0" text="L3" />
-      <CheckBox fx:id="M1promotionField" layoutX="283.0" layoutY="252.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="41.0" text="M1" />
-      <CheckBox fx:id="M2promotionField" layoutX="340.0" layoutY="252.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="41.0" text="M2" />
-      <CheckBox fx:id="BiotechnologySpecialisationField" layoutX="226.0" layoutY="291.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="87.0" text="Physiology" />
-      <CheckBox fx:id="PhysiologySpecialisationField" layoutX="324.0" layoutY="291.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="105.0" text="Biotechnology" />
-      <CheckBox fx:id="ImagingSpecialisationField" layoutX="442.0" layoutY="291.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="77.0" text="Imaging" />
+      <CheckBox id="L3promotionField" layoutX="226.0" layoutY="252.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="41.0" text="L3" />
+      <CheckBox id="M1promotionField" layoutX="283.0" layoutY="252.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="41.0" text="M1" />
+      <CheckBox id="M2promotionField" layoutX="340.0" layoutY="252.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="41.0" text="M2" />
+      <CheckBox id="BiotechnologySpecialisationField" layoutX="226.0" layoutY="291.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="87.0" text="Physiology" />
+      <CheckBox id="PhysiologySpecialisationField" layoutX="324.0" layoutY="291.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="105.0" text="Biotechnology" />
+      <CheckBox id="ImagingSpecialisationField" layoutX="442.0" layoutY="291.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="77.0" text="Imaging" />
       <Button layoutX="413.0" layoutY="337.0" mnemonicParsing="false"  onAction="#handleAdd" text="Validate">
          <effect>
             <ColorAdjust saturation="-0.02" />
