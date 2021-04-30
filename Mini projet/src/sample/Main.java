@@ -124,6 +124,8 @@ public class Main extends Application {
             return false;
         }
     }
+
+
     /**
      * Returns the main stage.
      * @return main stage

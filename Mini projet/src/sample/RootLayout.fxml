@@ -6,10 +6,16 @@
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.RootController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
-        <menus>
-          <Menu fx:id="student_list" mnemonicParsing="false" text="Student list" />
-          <Menu fx:id="student_add" mnemonicParsing="false" text="Add a student" />
-        </menus>
+         <menus>
+            <Menu fx:id="student_list" mnemonicParsing="false">
+               <graphic>
+                  <Button mnemonicParsing="false" text="list of student" onAction="#redirectStudentList" stylesheets="@Theme.css" />
+               </graphic></Menu>
+            <Menu fx:id="student_add" mnemonicParsing="false">
+               <graphic>
+                  <Button mnemonicParsing="false" text="Add a student" onAction="#redirectStudentAdd" stylesheets="@Theme.css"/>
+               </graphic></Menu>
+         </menus>
       </MenuBar>
    </top>
 </BorderPane>

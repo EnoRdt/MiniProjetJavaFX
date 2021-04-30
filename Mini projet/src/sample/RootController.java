@@ -28,7 +28,7 @@ public class RootController {
      */
     @FXML
     private void redirectStudentAdd() {
-
+        boolean okClicked = mainApp.showStudentAddFrame();
     }
 
     /**
@@ -36,7 +36,7 @@ public class RootController {
      */
     @FXML
     private void redirectStudentList() {
-
+        mainApp.showPersonOverview();
     }
     public RootController() {}
 
