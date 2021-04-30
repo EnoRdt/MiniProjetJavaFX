@@ -43,9 +43,9 @@
     -fx-border-color: grey;
 }
 .button_blue:hover {
-    -fx-background-color: linear-gradient(#FF8B8B,#D07171);
+    -fx-background-color: linear-gradient(#8BE0FF,#70B7D1);
 }
 .button_blue:pressed {
-    -fx-background-color: #CC6363;
+    -fx-background-color: #63ACCC;
 }
 
