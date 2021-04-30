@@ -2,6 +2,7 @@ package sample;
 
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
@@ -43,6 +44,25 @@ public class StudentOverviewController {
         SpeColumn.setCellValueFactory(cellData -> cellData.getValue().specialisationProperty());
     }
 
+    /**
+     * Called when the user clicks the modify button. Opens a frame to edit details for the selected student.
+     */
+    @FXML
+    private void handleEditPerson() {
+        Student selectedPerson = studentTable.getSelectionModel().getSelectedItem();
+        if (selectedPerson != null) {
+            boolean okClicked = mainApp.showPersonModifyFrame(selectedPerson);
+        } else {
+            // Nothing selected.
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(mainApp.getPrimaryStage());
+            alert.setTitle("No Selection");
+            alert.setHeaderText("No Student Selected");
+            alert.setContentText("Please select a Student in the table.");
+
+            alert.showAndWait();
+        }
+    }
     /**
      * Is called by the main application to give a reference back to itself.
      *

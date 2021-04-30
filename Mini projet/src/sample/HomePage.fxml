@@ -22,7 +22,7 @@
             <TableColumn prefWidth="100.0" />
         </columns>
       </TableView>
-      <Button layoutX="521.0" layoutY="39.0" mnemonicParsing="false" styleClass="button_blue" stylesheets="@Theme.css" text="Modify" />
+      <Button layoutX="521.0" layoutY="39.0" mnemonicParsing="false" styleClass="button_blue" stylesheets="@Theme.css" onAction="#handleEditPerson" text="Modify" />
       <Text fill="#34479e" layoutX="220.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student list" textAlignment="CENTER" wrappingWidth="159.0227508544922">
          <font>
             <Font size="20.0" />

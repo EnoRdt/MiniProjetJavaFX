@@ -86,6 +86,32 @@ public class Main extends Application {
     }
 
     /**
+     * Opens a dialog to edit details for the specified person. If the user
+     * clicks OK, the changes are saved into the provided person object and true
+     * is returned.
+     *
+     * @param student the person object to be edited
+     * @return true if the user clicked OK, false otherwise.
+     */
+    public boolean showPersonModifyFrame(Student student) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(this.getClass().getResource("ModifyPage.fxml"));
+            AnchorPane StudentModify = (AnchorPane) loader.load();
+
+            rootLayout.setCenter(StudentModify);
+
+            // Set the person into the controller.
+            AddAndEditStudentController controller = loader.getController();
+            controller.setStudent(student);
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    /**
      * Returns the main stage.
      * @return main stage
      */
