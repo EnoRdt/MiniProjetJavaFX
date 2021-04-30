@@ -31,7 +31,7 @@
          </toggleGroup></RadioButton>
       <RadioButton fx:id="PhysiologySpecialisationField" layoutX="324.0" layoutY="291.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="105.0" text="Biotechnology" toggleGroup="$Spe" />
       <RadioButton fx:id="ImagingSpecialisationField" layoutX="442.0" layoutY="291.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="77.0" text="Imaging" toggleGroup="$Spe" />
-      <Button layoutX="413.0" layoutY="337.0" mnemonicParsing="false" onAction="#handleAdd" text="Validate">
+      <Button layoutX="413.0" layoutY="337.0" mnemonicParsing="false" onAction="#handleModify" text="Validate">
          <effect>
             <ColorAdjust saturation="-0.02" />
          </effect>
