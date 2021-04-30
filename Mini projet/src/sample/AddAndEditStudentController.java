@@ -156,9 +156,9 @@ public class AddAndEditStudentController {
                     String SpeGroupValue = selectedRadioButton2.getText();
 
                     if (SpeGroupValue == BiotechnologySpecialisationField.getText()) {
-                        student.setSpecialisation("Physiology");
-                    } else if (SpeGroupValue == PhysiologySpecialisationField.getText()) {
                         student.setSpecialisation("Biotechnology");
+                    } else if (SpeGroupValue == PhysiologySpecialisationField.getText()) {
+                        student.setSpecialisation("Physiology");
                     } else if (SpeGroupValue == ImagingSpecialisationField.getText()) {
                         student.setSpecialisation("Imaging");
                     }
@@ -197,9 +197,9 @@ public class AddAndEditStudentController {
                 String SpeGroupValue = selectedRadioButton2.getText();
 
                 if (SpeGroupValue == BiotechnologySpecialisationField.getText()) {
-                    student.setSpecialisation("Physiology");
-                } else if (SpeGroupValue == PhysiologySpecialisationField.getText()) {
                     student.setSpecialisation("Biotechnology");
+                } else if (SpeGroupValue == PhysiologySpecialisationField.getText()) {
+                    student.setSpecialisation("Physiology");
                 } else if (SpeGroupValue == ImagingSpecialisationField.getText()) {
                     student.setSpecialisation("Imaging");
                 }
