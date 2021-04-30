@@ -1,21 +1,22 @@
 package sample;
 import javafx.beans.property.*;
+
 /**
  * Class used to represent a student.
  * A student has a first name, a last name, a year of birth, a promotion and a specialisation.
  *
  * @author Salomé Rebours, Florimel Flotté, Enola Roudaut
- * @version 23/04/2021
+ * @version 30/04/2021
  */
 public class Student {
-    private StringProperty firstName;
-    private StringProperty lastName;
-    private StringProperty yearOfBirth;
-    private StringProperty promotion;
-    private StringProperty specialisation;
+    private final StringProperty firstName;
+    private final StringProperty lastName;
+    private final StringProperty yearOfBirth;
+    private final StringProperty promotion;
+    private final StringProperty specialisation;
 
     /**
-     * Etudiant constructor.
+     * Student constructor.
      * @param firstName the first name of the student
      * @param lastName the last name of the student
      * @param yearOfBirth the year of birth of the student
@@ -31,7 +32,7 @@ public class Student {
 
     }
     /**
-     * Etudiant constructor.
+     * Student constructor.
      * Initialize the fields to default values.
      */
     public Student() {

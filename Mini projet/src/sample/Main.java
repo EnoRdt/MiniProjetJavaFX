@@ -11,10 +11,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-
+/**
+ * Main class of the project, allow all class to interact and made action
+ * @author Florimel Flotté, Salomé Rebours, Enola Roudaut
+ * @version 30/04/2020
+ */
 public class Main extends Application {
 
-    private ObservableList<Student> StudentData = FXCollections.observableArrayList();
+    private final ObservableList<Student> StudentData = FXCollections.observableArrayList();
 
     private Stage primaryStage;
     private BorderPane rootLayout;
@@ -33,10 +37,9 @@ public class Main extends Application {
     /**
      * The main entry point
      * @param primaryStage the primary stage of the application
-     * @throws Exception
      */
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Mini projet JavaFX");
         initRootLayout();
@@ -51,7 +54,7 @@ public class Main extends Application {
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(this.getClass().getResource("RootLayout.fxml"));
-            rootLayout = (BorderPane) loader.load();
+            rootLayout = loader.load();
 
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
@@ -65,12 +68,15 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * Load the homepage
+     */
     public void showPersonOverview() {
         try {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(this.getClass().getResource("HomePage.fxml"));
-            AnchorPane StudentOverview = (AnchorPane) loader.load();
+            AnchorPane StudentOverview = loader.load();
 
             // Set person overview into the center of root layout.
             rootLayout.setCenter(StudentOverview);
@@ -84,9 +90,7 @@ public class Main extends Application {
     }
 
     /**
-     * Opens a dialog to edit details for the specified person. If the user
-     * clicks OK, the changes are saved into the provided person object and true
-     * is returned.
+     * Load the modify page
      *
      * @param student the person object to be edited
      * @return true if the user clicked OK, false otherwise.
@@ -95,7 +99,7 @@ public class Main extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(this.getClass().getResource("ModifyPage.fxml"));
-            AnchorPane StudentModify = (AnchorPane) loader.load();
+            AnchorPane StudentModify = loader.load();
 
             rootLayout.setCenter(StudentModify);
 
@@ -109,20 +113,22 @@ public class Main extends Application {
             return false;
         }
     }
-    public boolean showStudentAddFrame() {
+
+    /**
+     *  load the adding page
+     */
+    public void showStudentAddFrame() {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(this.getClass().getResource("AddingPage.fxml"));
-            AnchorPane StudentAdd = (AnchorPane) loader.load();
+            AnchorPane StudentAdd = loader.load();
 
             rootLayout.setCenter(StudentAdd);
 
             AddAndEditStudentController controller = loader.getController();
             controller.setMainApp(this);
-            return controller.isOkClicked();
         } catch (IOException e) {
             e.printStackTrace();
-            return false;
         }
     }
 

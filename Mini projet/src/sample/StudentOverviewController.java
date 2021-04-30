@@ -6,6 +6,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
+/**
+ * Class allow to view student in the table
+ *
+ * @author Salomé Rebours, Florimel Flotté, Enola Roudaut
+ * @version 30/04/2021
+ */
 public class StudentOverviewController {
     @FXML
     private TableView<Student> studentTable;
@@ -51,7 +57,7 @@ public class StudentOverviewController {
     private void handleEditPerson() {
         Student selectedPerson = studentTable.getSelectionModel().getSelectedItem();
         if (selectedPerson != null) {
-            boolean okClicked = mainApp.showPersonModifyFrame(selectedPerson);
+            mainApp.showPersonModifyFrame(selectedPerson);
         } else {
             // Nothing selected.
             Alert alert = new Alert(Alert.AlertType.WARNING);
