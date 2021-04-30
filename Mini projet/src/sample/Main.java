@@ -33,6 +33,7 @@ public class Main extends Application {
 
     public void addStud(Student student) {
         StudentData.add(student);
+        showPersonOverview();
     }
     /**
      * The main entry point
@@ -152,7 +153,6 @@ public class Main extends Application {
     public ObservableList<Student> getStudentData() {
         return StudentData;
     }
-
 
 }
 

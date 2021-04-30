@@ -2,14 +2,14 @@ package sample;
 
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 
 /**
@@ -123,39 +123,53 @@ public class AddAndEditStudentController {
      */
     @FXML
     private void handleModify() {
+
         if (isInputValid()) {
-            student.setFirstName(firstNameField.getText());
-            student.setLastName(lastNameField.getText());
-            student.setYearOfBirth(yearOfBirthField.getText());
 
-            RadioButton selectedRadioButton = (RadioButton) Promo.getSelectedToggle();
-            String PromoGroupValue = selectedRadioButton.getText();
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Warning");
+            alert.setHeaderText("Are you sure want to validate ? The information will be saved.");
 
-            if (PromoGroupValue == L3promotionField.getText()) {
-                student.setPromotion("L3");
-            } else if (PromoGroupValue == M1promotionField.getText()) {
-                student.setPromotion("M1");
-            } else if (PromoGroupValue == M2promotionField.getText()) {
-                student.setPromotion("M2");
+            Optional<ButtonType> option = alert.showAndWait();
+
+            if (option.get() == ButtonType.OK) {
+                okClicked = true;
             }
-            RadioButton selectedRadioButton2 = (RadioButton) Spe.getSelectedToggle();
-            if (selectedRadioButton2!=null) {
-                String SpeGroupValue = selectedRadioButton2.getText();
+            if (okClicked) {
 
-                if (SpeGroupValue == BiotechnologySpecialisationField.getText()) {
-                    student.setSpecialisation("Physiology");
-                } else if (SpeGroupValue == PhysiologySpecialisationField.getText()) {
-                    student.setSpecialisation("Biotechnology");
-                } else if (SpeGroupValue == ImagingSpecialisationField.getText()) {
-                    student.setSpecialisation("Imaging");
+                student.setFirstName(firstNameField.getText());
+                student.setLastName(lastNameField.getText());
+                student.setYearOfBirth(yearOfBirthField.getText());
+
+                RadioButton selectedRadioButton = (RadioButton) Promo.getSelectedToggle();
+                String PromoGroupValue = selectedRadioButton.getText();
+
+                if (PromoGroupValue == L3promotionField.getText()) {
+                    student.setPromotion("L3");
+                } else if (PromoGroupValue == M1promotionField.getText()) {
+                    student.setPromotion("M1");
+                } else if (PromoGroupValue == M2promotionField.getText()) {
+                    student.setPromotion("M2");
                 }
-            }
-            else {
-                student.setSpecialisation(null);
-            }
-            okClicked = true;
+                RadioButton selectedRadioButton2 = (RadioButton) Spe.getSelectedToggle();
+                if (selectedRadioButton2 != null) {
+                    String SpeGroupValue = selectedRadioButton2.getText();
 
-         }
+                    if (SpeGroupValue == BiotechnologySpecialisationField.getText()) {
+                        student.setSpecialisation("Physiology");
+                    } else if (SpeGroupValue == PhysiologySpecialisationField.getText()) {
+                        student.setSpecialisation("Biotechnology");
+                    } else if (SpeGroupValue == ImagingSpecialisationField.getText()) {
+                        student.setSpecialisation("Imaging");
+                    }
+                } else {
+                    student.setSpecialisation(null);
+                }
+
+                mainApp.showPersonOverview();
+            }
+
+        }
     }
     /**
      * Called when the user clicks ok.
@@ -250,8 +264,15 @@ public class AddAndEditStudentController {
 
     @FXML
     private void redirectStudentList() {
-        mainApp.showPersonOverview();
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Warning");
+        alert.setHeaderText("Are you sure want to quit ? The information will not be saved.");
+
+        Optional<ButtonType> option = alert.showAndWait();
+
+        if (option.get() == ButtonType.OK) {
+            mainApp.showPersonOverview();
+        }
     }
-
-
 }
