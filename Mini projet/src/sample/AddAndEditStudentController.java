@@ -4,10 +4,11 @@ package sample;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
-import java.awt.*;
+
 import java.time.LocalDate;
 
 
@@ -78,19 +79,35 @@ public class AddAndEditStudentController {
      */
     public void setStudent(Student student) {
         this.student = student;
-
-        firstNameField.setText(student.getFirstName());
-        firstNameField.setText("Enter first name");
-        lastNameField.setText(student.getLastName());
-        lastNameField.setText("Enter last name");
-
-        if (student.getYearOfBirth() == "0") {
-            yearOfBirthField.setText("");
-        } else {
-            yearOfBirthField.setText(student.getYearOfBirth());
+        if (student == null) {
+            firstNameField.setText("Enter first name");
+            lastNameField.setText("Enter last name");
+            yearOfBirthField.setText("yyyy");
         }
-        yearOfBirthField.setText("yyyy");
+        else {
+            firstNameField.setText(student.getFirstName());
+            lastNameField.setText(student.getLastName());
+            yearOfBirthField.setText(student.getYearOfBirth());
+            if (student.getPromotion()=="L3") {
+                L3promotionField.setSelected(true);
+            }
+            else if (student.getPromotion()=="M1") {
+                M1promotionField.setSelected(true);
+                if (student.getSpecialisation() == "Biotechnology") {
+                    BiotechnologySpecialisationField.setSelected(true);
+                }
+                else if (student.getSpecialisation() == "Physiology") {
+                    PhysiologySpecialisationField.setSelected(true);
+                }
+                else {
+                    ImagingSpecialisationField.setSelected(true);
+                }
+            }
+            else {
+                M2promotionField.setSelected(true);
+            }
 
+        }
     }
 
     /**
