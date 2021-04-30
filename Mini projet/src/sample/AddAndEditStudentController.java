@@ -194,6 +194,13 @@ public class AddAndEditStudentController {
             return false;
         }
     }
+    /**
+     * Redirection to the page where there is the student list
+     */
+    @FXML
+    private void redirectStudentList() {
+        mainApp.showPersonOverview();
+    }
 
 
 }
