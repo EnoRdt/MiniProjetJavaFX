@@ -3,6 +3,10 @@
     -fx-background-color: #E7F2FF;
 }
 
+.menubar:hover {
+    -fx-background-color: red;
+}
+
 /* Green buttons */
 .button_pos {
     -fx-text-alignment: center;
