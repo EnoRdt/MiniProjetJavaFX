@@ -7,12 +7,6 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddAndEditStudentController">
    <children>
-      <MenuBar prefHeight="25.0" prefWidth="600.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="Student list" />
-          <Menu mnemonicParsing="false" styleClass="AddingPage_AddAStudent" text="Add a Student" />
-        </menus>
-      </MenuBar>
       <Text layoutX="121.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Firstname * :" textAlignment="CENTER" wrappingWidth="105.0" />
       <Button layoutX="15.0" layoutY="35.0" mnemonicParsing="false" text="&lt;- Back" />
       <TextField fx:id="firstNameField" layoutX="226.0" layoutY="96.0" />

@@ -109,6 +109,21 @@ public class Main extends Application {
             return false;
         }
     }
+    public boolean showStudentAddFrame() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(this.getClass().getResource("AddingPage.fxml"));
+            AnchorPane StudentAdd = (AnchorPane) loader.load();
+
+            rootLayout.setCenter(StudentAdd);
+
+            AddAndEditStudentController controller = loader.getController();
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
     /**
      * Returns the main stage.
      * @return main stage

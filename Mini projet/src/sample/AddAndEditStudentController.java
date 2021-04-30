@@ -39,9 +39,9 @@ public class AddAndEditStudentController {
     private RadioButton ImagingSpecialisationField;
 
     @FXML
-    private ToggleGroup promo;
+    private ToggleGroup Promo;
     @FXML
-    private ToggleGroup spe;
+    private ToggleGroup Spe;
 
 
     private Stage dialogStage;
@@ -128,7 +128,7 @@ public class AddAndEditStudentController {
             student.setLastName(lastNameField.getText());
             student.setYearOfBirth(yearOfBirthField.getText());
 
-            RadioButton selectedRadioButton = (RadioButton) promo.getSelectedToggle();
+            RadioButton selectedRadioButton = (RadioButton) Promo.getSelectedToggle();
             String PromoGroupValue = selectedRadioButton.getText();
 
             if (PromoGroupValue == L3promotionField.toString()) {
@@ -138,17 +138,21 @@ public class AddAndEditStudentController {
             } else if (PromoGroupValue == M2promotionField.toString()) {
                 student.setPromotion("M2");
             }
-            RadioButton selectedRadioButton2 = (RadioButton) spe.getSelectedToggle();
-            String SpeGroupValue = selectedRadioButton2.getText();
+            RadioButton selectedRadioButton2 = (RadioButton) Spe.getSelectedToggle();
+            if (selectedRadioButton2!=null) {
+                String SpeGroupValue = selectedRadioButton2.getText();
 
-            if (SpeGroupValue == BiotechnologySpecialisationField.toString()) {
-                student.setSpecialisation("Biotechnology");
-            } else if (SpeGroupValue == PhysiologySpecialisationField.toString()) {
-                student.setSpecialisation("Physiology");
-            } else if (SpeGroupValue == ImagingSpecialisationField.toString()) {
-                student.setSpecialisation("Imaging");
+                if (SpeGroupValue == BiotechnologySpecialisationField.toString()) {
+                    student.setSpecialisation("Biotechnology");
+                } else if (SpeGroupValue == PhysiologySpecialisationField.toString()) {
+                    student.setSpecialisation("Physiology");
+                } else if (SpeGroupValue == ImagingSpecialisationField.toString()) {
+                    student.setSpecialisation("Imaging");
+                }
             }
-
+            else {
+                student.setSpecialisation(null);
+            }
             okClicked = true;
             dialogStage.close();
 
@@ -175,15 +179,6 @@ public class AddAndEditStudentController {
             errorMessage += "No valid Year Of Birth!\n";
         }
 
-        /**
-        if (!L3promotionField.getState() && !M1promotionField.getState() && !M2promotionField.getState()) {
-            errorMessage += "No valid promotion!\n";
-        }
-
-        if (!PhysiologySpecialisationField.getState() && !BiotechnologySpecialisationField.getState() && !ImagingSpecialisationField.getState()) {
-            errorMessage += "No valid specialisation!\n";
-        }
-*/
         if (errorMessage.length() == 0) {
             return true;
         } else {
