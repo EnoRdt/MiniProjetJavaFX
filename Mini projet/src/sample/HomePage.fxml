@@ -8,8 +8,8 @@
     <children>
         <MenuBar layoutY="3.0" prefHeight="22.0" prefWidth="600.0" styleClass="menubar" stylesheets="@Theme.css">
             <menus>
-                <Menu mnemonicParsing="false" text="Student list" />
-                <Menu mnemonicParsing="false" text="Add a student" />
+                <Menu id="student_list" mnemonicParsing="false" text="Student list"/>
+                <Menu id="student_add" mnemonicParsing="false" text="Add a student"/>
             </menus>
         </MenuBar>
       <TableView fx:id="studentTable" layoutY="76.0" prefHeight="287.0" prefWidth="600.0">
