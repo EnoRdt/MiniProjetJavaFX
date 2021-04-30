@@ -194,9 +194,19 @@ public class AddAndEditStudentController {
             return false;
         }
     }
+
+    /**
+     * Sets the main app reference
+     * @param mainApp the mainApp
+     */
+    public void setMainApp(Main mainApp) {
+        this.mainApp = mainApp;
+    }
+
     /**
      * Redirection to the page where there is the student list
      */
+
     @FXML
     private void redirectStudentList() {
         mainApp.showPersonOverview();
