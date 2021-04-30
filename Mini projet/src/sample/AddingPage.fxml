@@ -8,23 +8,28 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddAndEditStudentController">
    <children>
       <Text layoutX="121.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Firstname * :" textAlignment="CENTER" wrappingWidth="105.0" />
-      <Button layoutX="15.0" layoutY="35.0" mnemonicParsing="false" text="&lt;- Back" />
-      <TextField id="firstNameField" layoutX="226.0" layoutY="96.0" />
-      <TextField id="lastNameField" layoutX="226.0" layoutY="144.0" />
-      <TextField id="yearOfBirthField" layoutX="226.0" layoutY="188.0" prefHeight="25.0" prefWidth="77.0" />
+      <TextField fx:id="firstNameField" layoutX="226.0" layoutY="96.0" />
+      <TextField fx:id="lastNameField" layoutX="226.0" layoutY="144.0" />
+      <TextField fx:id="yearOfBirthField" layoutX="226.0" layoutY="188.0" prefHeight="25.0" prefWidth="77.0" />
       <Text layoutX="121.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lastname * :" textAlignment="CENTER" wrappingWidth="105.0" />
       <Text layoutX="121.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birth Year * :" textAlignment="CENTER" wrappingWidth="105.0" />
-      <Text fill="#34479e" layoutX="7.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add a new student :" textAlignment="CENTER" wrappingWidth="593.0">
+      <Text fill="#34479e" layoutX="7.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add a new student :" textAlignment="CENTER" wrappingWidth="593.0">
          <font>
             <Font name="System Italic" size="20.0" />
          </font>
       </Text>
-      <CheckBox id="L3promotionField" layoutX="226.0" layoutY="252.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="41.0" text="L3" />
-      <CheckBox id="M1promotionField" layoutX="283.0" layoutY="252.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="41.0" text="M1" />
-      <CheckBox id="M2promotionField" layoutX="340.0" layoutY="252.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="41.0" text="M2" />
-      <CheckBox id="BiotechnologySpecialisationField" layoutX="226.0" layoutY="291.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="87.0" text="Physiology" />
-      <CheckBox id="PhysiologySpecialisationField" layoutX="324.0" layoutY="291.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="105.0" text="Biotechnology" />
-      <CheckBox id="ImagingSpecialisationField" layoutX="442.0" layoutY="291.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="77.0" text="Imaging" />
+      <RadioButton fx:id="L3promotionField" layoutX="226.0" layoutY="252.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="41.0" selected="true" text="L3">
+         <toggleGroup>
+            <ToggleGroup fx:id="Promo" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="M1promotionField" layoutX="283.0" layoutY="252.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="41.0" text="M1" toggleGroup="$Promo" />
+      <RadioButton fx:id="M2promotionField" layoutX="340.0" layoutY="252.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="41.0" text="M2" toggleGroup="$Promo" />
+      <RadioButton fx:id="BiotechnologySpecialisationField" layoutX="226.0" layoutY="291.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="87.0" text="Physiology">
+         <toggleGroup>
+            <ToggleGroup fx:id="Spe" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="PhysiologySpecialisationField" layoutX="324.0" layoutY="291.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="105.0" text="Biotechnology" toggleGroup="$Spe" />
+      <RadioButton fx:id="ImagingSpecialisationField" layoutX="442.0" layoutY="291.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="77.0" text="Imaging" toggleGroup="$Spe" />
       <Button layoutX="413.0" layoutY="337.0" mnemonicParsing="false" onAction="#handleAdd" text="Validate">
          <effect>
             <ColorAdjust saturation="-0.02" />
@@ -32,5 +37,6 @@
       </Button>
       <Text layoutX="121.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Promotion * :" textAlignment="CENTER" wrappingWidth="105.0" />
       <Text layoutX="121.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Specialisation :" textAlignment="CENTER" wrappingWidth="105.0" />
+      <Button contentDisplay="TOP" layoutX="15.0" layoutY="51.0" mnemonicParsing="false" onAction="#redirectStudentList" text="&lt;- Back" />
    </children>
 </AnchorPane>

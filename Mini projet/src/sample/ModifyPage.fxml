@@ -8,7 +8,6 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddAndEditStudentController">
    <children>
       <Text layoutX="121.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Firstname * :" textAlignment="CENTER" wrappingWidth="105.0" />
-      <Button layoutX="15.0" layoutY="35.0" mnemonicParsing="false" text="&lt;- Back" />
       <TextField fx:id="firstNameField" layoutX="226.0" layoutY="96.0" />
       <TextField fx:id="lastNameField" layoutX="226.0" layoutY="144.0" />
       <TextField fx:id="yearOfBirthField" layoutX="226.0" layoutY="188.0" prefHeight="25.0" prefWidth="77.0" />
@@ -32,12 +31,13 @@
          </toggleGroup></RadioButton>
       <RadioButton fx:id="PhysiologySpecialisationField" layoutX="324.0" layoutY="291.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="105.0" text="Biotechnology" toggleGroup="$Spe" />
       <RadioButton fx:id="ImagingSpecialisationField" layoutX="442.0" layoutY="291.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="77.0" text="Imaging" toggleGroup="$Spe" />
-      <Button layoutX="413.0" layoutY="337.0" mnemonicParsing="false" onAction="#handleAdd" text="Validate">
+      <Button layoutX="413.0" layoutY="337.0" mnemonicParsing="false" onAction="#handleModify" text="Validate">
          <effect>
             <ColorAdjust saturation="-0.02" />
          </effect>
       </Button>
       <Text layoutX="121.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Promotion * :" textAlignment="CENTER" wrappingWidth="105.0" />
       <Text layoutX="121.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Specialisation :" textAlignment="CENTER" wrappingWidth="105.0" />
+      <Button layoutX="15.0" layoutY="49.0" mnemonicParsing="false" onAction="#redirectStudentList" text="&lt;- Back" />
    </children>
 </AnchorPane>

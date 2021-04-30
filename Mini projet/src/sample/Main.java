@@ -27,6 +27,9 @@ public class Main extends Application {
         StudentData.add(new Student("Etu5", "LastN5", "1994", "M2", null));
     }
 
+    public void addStud(Student student) {
+        StudentData.add(student);
+    }
     /**
      * The main entry point
      * @param primaryStage the primary stage of the application
@@ -56,9 +59,6 @@ public class Main extends Application {
             primaryStage.show();
 
             RootController controller = loader.getController();
-            if (controller == null) {
-                System.out.println("vide");
-            }
             controller.setMainApp(this);
         } catch (IOException e) {
             e.printStackTrace();
@@ -102,7 +102,7 @@ public class Main extends Application {
             // Set the person into the controller.
             AddAndEditStudentController controller = loader.getController();
             controller.setStudent(student);
-
+            controller.setMainApp(this);
             return controller.isOkClicked();
         } catch (IOException e) {
             e.printStackTrace();
@@ -118,6 +118,7 @@ public class Main extends Application {
             rootLayout.setCenter(StudentAdd);
 
             AddAndEditStudentController controller = loader.getController();
+            controller.setMainApp(this);
             return controller.isOkClicked();
         } catch (IOException e) {
             e.printStackTrace();

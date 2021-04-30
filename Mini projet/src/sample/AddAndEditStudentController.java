@@ -122,7 +122,7 @@ public class AddAndEditStudentController {
      * Called when the user clicks ok.
      */
     @FXML
-    private void handleAdd() {
+    private void handleModify() {
         if (isInputValid()) {
             student.setFirstName(firstNameField.getText());
             student.setLastName(lastNameField.getText());
@@ -131,22 +131,22 @@ public class AddAndEditStudentController {
             RadioButton selectedRadioButton = (RadioButton) Promo.getSelectedToggle();
             String PromoGroupValue = selectedRadioButton.getText();
 
-            if (PromoGroupValue == L3promotionField.toString()) {
+            if (PromoGroupValue == L3promotionField.getText()) {
                 student.setPromotion("L3");
-            } else if (PromoGroupValue == M1promotionField.toString()) {
+            } else if (PromoGroupValue == M1promotionField.getText()) {
                 student.setPromotion("M1");
-            } else if (PromoGroupValue == M2promotionField.toString()) {
+            } else if (PromoGroupValue == M2promotionField.getText()) {
                 student.setPromotion("M2");
             }
             RadioButton selectedRadioButton2 = (RadioButton) Spe.getSelectedToggle();
             if (selectedRadioButton2!=null) {
                 String SpeGroupValue = selectedRadioButton2.getText();
 
-                if (SpeGroupValue == BiotechnologySpecialisationField.toString()) {
-                    student.setSpecialisation("Biotechnology");
-                } else if (SpeGroupValue == PhysiologySpecialisationField.toString()) {
+                if (SpeGroupValue == BiotechnologySpecialisationField.getText()) {
                     student.setSpecialisation("Physiology");
-                } else if (SpeGroupValue == ImagingSpecialisationField.toString()) {
+                } else if (SpeGroupValue == PhysiologySpecialisationField.getText()) {
+                    student.setSpecialisation("Biotechnology");
+                } else if (SpeGroupValue == ImagingSpecialisationField.getText()) {
                     student.setSpecialisation("Imaging");
                 }
             }
@@ -154,9 +154,50 @@ public class AddAndEditStudentController {
                 student.setSpecialisation(null);
             }
             okClicked = true;
-            dialogStage.close();
 
+         }
     }
+    /**
+     * Called when the user clicks ok.
+     */
+    @FXML
+    private void handleAdd() {
+        if (isInputValid()) {
+            Student student = new Student();
+            student.setFirstName(firstNameField.getText());
+            student.setLastName(lastNameField.getText());
+            student.setYearOfBirth(yearOfBirthField.getText());
+
+            RadioButton selectedRadioButton = (RadioButton) Promo.getSelectedToggle();
+            String PromoGroupValue = selectedRadioButton.getText();
+
+            if (PromoGroupValue == L3promotionField.getText()) {
+                student.setPromotion("L3");
+            } else if (PromoGroupValue == M1promotionField.getText()) {
+                student.setPromotion("M1");
+            } else if (PromoGroupValue == M2promotionField.getText()) {
+                student.setPromotion("M2");
+            }
+            RadioButton selectedRadioButton2 = (RadioButton) Spe.getSelectedToggle();
+            if (selectedRadioButton2!=null) {
+                String SpeGroupValue = selectedRadioButton2.getText();
+
+                if (SpeGroupValue == BiotechnologySpecialisationField.getText()) {
+                    student.setSpecialisation("Physiology");
+                } else if (SpeGroupValue == PhysiologySpecialisationField.getText()) {
+                    student.setSpecialisation("Biotechnology");
+                } else if (SpeGroupValue == ImagingSpecialisationField.getText()) {
+                    student.setSpecialisation("Imaging");
+                }
+            }
+            else {
+                student.setSpecialisation(null);
+            }
+
+            okClicked = true;
+            mainApp.addStud(student);
+
+        }
     }
 
     /**
@@ -179,7 +220,7 @@ public class AddAndEditStudentController {
             errorMessage += "No valid Year Of Birth!\n";
         }
 
-        if (errorMessage.length() == 0) {
+        if (errorMessage == "") {
             return true;
         } else {
             // Show the error message.
@@ -193,6 +234,23 @@ public class AddAndEditStudentController {
 
             return false;
         }
+    }
+
+    /**
+     * Sets the main app reference
+     * @param mainApp the mainApp
+     */
+    public void setMainApp(Main mainApp) {
+        this.mainApp = mainApp;
+    }
+
+    /**
+     * Redirection to the page where there is the student list
+     */
+
+    @FXML
+    private void redirectStudentList() {
+        mainApp.showPersonOverview();
     }
 
 
