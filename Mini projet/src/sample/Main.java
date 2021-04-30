@@ -25,8 +25,8 @@ public class Main extends Application {
 
     public Main() {
         StudentData.add(new Student("Etu1", "LastN1", "1990", "L3", null));
-        StudentData.add(new Student("Etu2", "LastN2", "1991", "M1", "biotechnology"));
-        StudentData.add(new Student("Etu3", "LastN3", "1992", "M1", "imaging"));
+        StudentData.add(new Student("Etu2", "LastN2", "1991", "M1", "Biotechnology"));
+        StudentData.add(new Student("Etu3", "LastN3", "1992", "M1", "Imaging"));
         StudentData.add(new Student("Etu4", "LastN4", "1993", "M1", "Physiology"));
         StudentData.add(new Student("Etu5", "LastN5", "1994", "M2", null));
     }
