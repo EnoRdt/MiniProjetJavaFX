@@ -14,7 +14,7 @@ import java.io.IOException;
 /**
  * Main class of the project, allow all class to interact and made action
  * @author Florimel Flotté, Salomé Rebours, Enola Roudaut
- * @version 30/04/2020
+ * @version 30/04/2021
  */
 public class Main extends Application {
 
