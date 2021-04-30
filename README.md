@@ -11,3 +11,6 @@ It is possible to create or modify a student.
 Data are not persistent (no database). 
 
 See the demo provided with the project. 
+
+1 feature has not been developed : 
+The specialisation only for M1 students. 
