@@ -3,7 +3,10 @@ package sample;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
+
 import java.awt.*;
 import java.time.LocalDate;
 
@@ -22,28 +25,42 @@ public class AddAndEditStudentController {
     @FXML
     private TextField yearOfBirthField;
     @FXML
-    private Checkbox L3promotionField;
+    private RadioButton L3promotionField;
     @FXML
-    private Checkbox M1promotionField;
+    private RadioButton M1promotionField;
     @FXML
-    private Checkbox M2promotionField;
+    private RadioButton M2promotionField;
     @FXML
-    private Checkbox BiotechnologySpecialisationField;
+    private RadioButton BiotechnologySpecialisationField;
     @FXML
-    private Checkbox PhysiologySpecialisationField;
+    private RadioButton PhysiologySpecialisationField;
     @FXML
-    private Checkbox ImagingSpecialisationField;
+    private RadioButton ImagingSpecialisationField;
+
+    @FXML
+    private ToggleGroup promo;
+    @FXML
+    private ToggleGroup spe;
+
 
     private Stage dialogStage;
     private Student student;
     private boolean okClicked = false;
+
+    // Reference to the main application.
+    private Main mainApp;
+
+    public AddAndEditStudentController() {
+    }
 
     /**
      * Initialize the controller class.
      */
     @FXML
     private void initialize() {
+
     }
+
 
     /**
      * Sets the stage of this dialog.
@@ -94,19 +111,24 @@ public class AddAndEditStudentController {
             student.setLastName(lastNameField.getText());
             student.setYearOfBirth(yearOfBirthField.getText());
 
-            if (L3promotionField.getState()) {
+            RadioButton selectedRadioButton = (RadioButton) promo.getSelectedToggle();
+            String PromoGroupValue = selectedRadioButton.getText();
+
+            if (PromoGroupValue == L3promotionField.toString()) {
                 student.setPromotion("L3");
-            } else if (M1promotionField.getState()) {
+            } else if (PromoGroupValue == M1promotionField.toString()) {
                 student.setPromotion("M1");
-            } else if (M2promotionField.getState()) {
+            } else if (PromoGroupValue == M2promotionField.toString()) {
                 student.setPromotion("M2");
             }
+            RadioButton selectedRadioButton2 = (RadioButton) spe.getSelectedToggle();
+            String SpeGroupValue = selectedRadioButton2.getText();
 
-            if (BiotechnologySpecialisationField.getState()) {
+            if (SpeGroupValue == BiotechnologySpecialisationField.toString()) {
                 student.setSpecialisation("Biotechnology");
-            } else if (PhysiologySpecialisationField.getState()) {
+            } else if (SpeGroupValue == PhysiologySpecialisationField.toString()) {
                 student.setSpecialisation("Physiology");
-            } else if (ImagingSpecialisationField.getState()) {
+            } else if (SpeGroupValue == ImagingSpecialisationField.toString()) {
                 student.setSpecialisation("Imaging");
             }
 
@@ -121,6 +143,7 @@ public class AddAndEditStudentController {
      *
      * @return true if the input is valid
      */
+
     private boolean isInputValid() {
         String errorMessage = "";
 
@@ -135,6 +158,7 @@ public class AddAndEditStudentController {
             errorMessage += "No valid Year Of Birth!\n";
         }
 
+        /**
         if (!L3promotionField.getState() && !M1promotionField.getState() && !M2promotionField.getState()) {
             errorMessage += "No valid promotion!\n";
         }
@@ -142,7 +166,7 @@ public class AddAndEditStudentController {
         if (!PhysiologySpecialisationField.getState() && !BiotechnologySpecialisationField.getState() && !ImagingSpecialisationField.getState()) {
             errorMessage += "No valid specialisation!\n";
         }
-
+*/
         if (errorMessage.length() == 0) {
             return true;
         } else {
@@ -158,5 +182,6 @@ public class AddAndEditStudentController {
             return false;
         }
     }
+
 
 }

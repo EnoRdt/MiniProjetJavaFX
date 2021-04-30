@@ -36,7 +36,7 @@ public class StudentOverviewController {
      */
     @FXML
     private void initialize() {
-        // Initialize the person table with the two columns.
+        // Initialize the person table with the columns.
         firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
         lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
         BirthNameColumn.setCellValueFactory(cellData -> cellData.getValue().yearOfBirthProperty());
