@@ -2,7 +2,6 @@ package sample;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Menu;
-import javafx.scene.control.MenuItem;
 
 
 public class RootController {
@@ -28,7 +27,7 @@ public class RootController {
      */
     @FXML
     private void redirectStudentAdd() {
-        boolean okClicked = mainApp.showStudentAddFrame();
+        mainApp.showStudentAddFrame();
     }
 
     /**
