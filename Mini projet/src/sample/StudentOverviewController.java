@@ -38,7 +38,7 @@ public class StudentOverviewController {
         // Initialize the person table with the two columns.
         firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
         lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
-        //BirthNameColumn.setCellValueFactory(cellData -> cellData.getValue().yearOfBirthProperty());
+        BirthNameColumn.setCellValueFactory(cellData -> cellData.getValue().yearOfBirthProperty());
         PromotionColumn.setCellValueFactory(cellData -> cellData.getValue().promotionProperty());
         SpeColumn.setCellValueFactory(cellData -> cellData.getValue().specialisationProperty());
     }

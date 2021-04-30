@@ -10,7 +10,7 @@ import javafx.beans.property.*;
 public class Student {
     private StringProperty firstName;
     private StringProperty lastName;
-    private IntegerProperty yearOfBirth;
+    private StringProperty yearOfBirth;
     private StringProperty promotion;
     private StringProperty specialisation;
 
@@ -22,10 +22,10 @@ public class Student {
      * @param promotion the promotion of the student
      * @param specialisation the specialisation of the student
      */
-    public Student(String firstName, String lastName, int yearOfBirth, String promotion, String specialisation) {
+    public Student(String firstName, String lastName, String yearOfBirth, String promotion, String specialisation) {
         this.firstName = new SimpleStringProperty(firstName);
         this.lastName = new SimpleStringProperty(lastName);
-        this.yearOfBirth = new SimpleIntegerProperty(yearOfBirth);
+        this.yearOfBirth = new SimpleStringProperty(yearOfBirth);
         this.promotion = new SimpleStringProperty(promotion);
         this.specialisation = new SimpleStringProperty(specialisation);
 
@@ -35,7 +35,7 @@ public class Student {
      * Initialize the fields to default values.
      */
     public Student() {
-        this("", "", 0, "", "");
+        this("", "", "0", "", "");
     }
 
     /**
@@ -85,14 +85,14 @@ public class Student {
     /**
      * @return the year of birth of the student
      */
-    public int getYearOfBirth() {
+    public String getYearOfBirth() {
         return yearOfBirth.get();
     }
 
     /**
      * @return the yearOfBirthProperty
      */
-    public IntegerProperty yearOfBirthProperty() {
+    public StringProperty yearOfBirthProperty() {
         return yearOfBirth;
     }
 
@@ -100,7 +100,7 @@ public class Student {
      * Sets the year of birth of the student
      * @param yearOfBirth the student's year of birth
      */
-    public void setYearOfBirth(int yearOfBirth) {
+    public void setYearOfBirth(String yearOfBirth) {
         this.yearOfBirth.set(yearOfBirth);
     }
 

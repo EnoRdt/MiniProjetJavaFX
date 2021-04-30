@@ -67,10 +67,10 @@ public class AddAndEditStudentController {
         lastNameField.setText(student.getLastName());
         lastNameField.setText("Enter last name");
 
-        if (student.getYearOfBirth() == 0) {
+        if (student.getYearOfBirth() == "0") {
             yearOfBirthField.setText("");
         } else {
-            yearOfBirthField.setText(Integer.toString(student.getYearOfBirth()));
+            yearOfBirthField.setText(student.getYearOfBirth());
         }
         yearOfBirthField.setText("yyyy");
 
@@ -92,7 +92,7 @@ public class AddAndEditStudentController {
         if (isInputValid()) {
             student.setFirstName(firstNameField.getText());
             student.setLastName(lastNameField.getText());
-            student.setYearOfBirth(Integer.parseInt(yearOfBirthField.getText()));
+            student.setYearOfBirth(yearOfBirthField.getText());
 
             if (L3promotionField.getState()) {
                 student.setPromotion("L3");
