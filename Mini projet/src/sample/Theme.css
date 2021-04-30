@@ -8,8 +8,8 @@
 .button_green {
     -fx-text-alignment: center;
     -fx-background-color: linear-gradient(#DCFAC5,#B2CB9E);
-    -fx-background-radius: 10;
-    -fx-border-radius: 10;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
     -fx-border-color: grey;
 }
 .button_green:hover {
@@ -23,8 +23,8 @@
 .button_red {
     -fx-text-alignment: center;
     -fx-background-color: linear-gradient(#FAC5C5,#CB9E9E);
-    -fx-background-radius: 10;
-    -fx-border-radius: 10;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
     -fx-border-color: grey;
 }
 .button_red:hover {
@@ -38,8 +38,8 @@
 .button_blue {
     -fx-text-alignment: center;
     -fx-background-color: linear-gradient(#C5E6FA,#A0BBCB);
-    -fx-background-radius: 10;
-    -fx-border-radius: 10;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
     -fx-border-color: grey;
 }
 .button_blue:hover {
