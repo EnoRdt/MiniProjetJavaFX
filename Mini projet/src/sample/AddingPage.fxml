@@ -24,11 +24,11 @@
          </toggleGroup></RadioButton>
       <RadioButton fx:id="M1promotionField" layoutX="283.0" layoutY="252.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="41.0" text="M1" toggleGroup="$Promo" />
       <RadioButton fx:id="M2promotionField" layoutX="340.0" layoutY="252.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="41.0" text="M2" toggleGroup="$Promo" />
-      <RadioButton fx:id="BiotechnologySpecialisationField" layoutX="226.0" layoutY="291.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="87.0" text="Physiology">
+      <RadioButton fx:id="PhysiologySpecialisationField" layoutX="226.0" layoutY="291.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="87.0" text="Physiology">
          <toggleGroup>
             <ToggleGroup fx:id="Spe" />
          </toggleGroup></RadioButton>
-      <RadioButton fx:id="PhysiologySpecialisationField" layoutX="324.0" layoutY="291.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="105.0" text="Biotechnology" toggleGroup="$Spe" />
+      <RadioButton fx:id="BiotechnologySpecialisationField" layoutX="324.0" layoutY="291.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="105.0" text="Biotechnology" toggleGroup="$Spe" />
       <RadioButton fx:id="ImagingSpecialisationField" layoutX="442.0" layoutY="291.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="77.0" text="Imaging" toggleGroup="$Spe" />
       <Button layoutX="413.0" layoutY="337.0" mnemonicParsing="false" onAction="#handleAdd" styleClass="button_green" stylesheets="@Theme.css" text="Validate">
          <effect>
