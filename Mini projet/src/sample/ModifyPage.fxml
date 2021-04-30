@@ -31,13 +31,13 @@
          </toggleGroup></RadioButton>
       <RadioButton fx:id="PhysiologySpecialisationField" layoutX="324.0" layoutY="291.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="105.0" text="Biotechnology" toggleGroup="$Spe" />
       <RadioButton fx:id="ImagingSpecialisationField" layoutX="442.0" layoutY="291.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="77.0" text="Imaging" toggleGroup="$Spe" />
-      <Button layoutX="413.0" layoutY="337.0" mnemonicParsing="false" onAction="#handleModify" text="Validate">
+      <Button layoutX="413.0" layoutY="337.0" mnemonicParsing="false" onAction="#handleModify" styleClass="button_green" stylesheets="@Theme.css" text="Validate">
          <effect>
             <ColorAdjust saturation="-0.02" />
          </effect>
       </Button>
       <Text layoutX="121.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Promotion * :" textAlignment="CENTER" wrappingWidth="105.0" />
       <Text layoutX="121.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Specialisation :" textAlignment="CENTER" wrappingWidth="105.0" />
-      <Button layoutX="15.0" layoutY="49.0" mnemonicParsing="false" onAction="#redirectStudentList" text="&lt;- Back" />
+      <Button layoutX="15.0" layoutY="49.0" mnemonicParsing="false" onAction="#redirectStudentList" styleClass="button_red" stylesheets="@Theme.css" text="&lt;- Back" />
    </children>
 </AnchorPane>

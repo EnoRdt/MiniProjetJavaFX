@@ -9,11 +9,11 @@
          <menus>
             <Menu fx:id="student_list" mnemonicParsing="false">
                <graphic>
-                  <Button mnemonicParsing="false" onAction="#redirectStudentList" text="list of student" />
+                  <Button mnemonicParsing="false" onAction="#redirectStudentList" styleClass="button_blue" stylesheets="@Theme.css" text="list of student" />
                </graphic></Menu>
             <Menu fx:id="student_add" mnemonicParsing="false">
                <graphic>
-                  <Button mnemonicParsing="false" onAction="#redirectStudentAdd" stylesheets="@Theme.css" text="Add a student" />
+                  <Button mnemonicParsing="false" onAction="#redirectStudentAdd" styleClass="button_blue" stylesheets="@Theme.css" text="Add a student" />
                </graphic></Menu>
          </menus>
       </MenuBar>
